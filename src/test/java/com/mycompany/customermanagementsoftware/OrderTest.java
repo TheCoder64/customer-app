@@ -60,3 +60,5 @@ public class OrderTest {
         assertEquals(5.0f, order.calcTotalWeight());
     }
 }
+
+// test trigger
