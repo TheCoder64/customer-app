@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         IMAGE = "just4coder/customer-app:latest"
-        DOCKER_PATH = "C:\Program Files\Docker\Docker\resources\bin"
+        DOCKER_PATH = "C:/Program Files/Docker/Docker/resources/bin"
     }
 
     stages {
