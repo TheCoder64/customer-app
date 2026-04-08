@@ -5,6 +5,11 @@ pipeline {
         maven 'Maven-3'
     }
 
+    environment {
+        IMAGE = "just4coder/customer-app:latest"
+        DOCKER_PATH = "C:\Program Files\Docker\Docker\resources\bin"
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -32,7 +37,7 @@ pipeline {
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
                     bat '''
-                    export PATH=$PATH:$DOCKER_PATH
+                    setx PATH=$PATH:$DOCKER_PATH
 
                     echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
 
