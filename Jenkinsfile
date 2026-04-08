@@ -37,11 +37,12 @@ pipeline {
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
                     bat '''
-                    set PATH=$PATH:$DOCKER_PATH
-
-                    echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-
-                    docker buildx build --platform linux/amd64 -t $IMAGE --push .
+                        set PATH=%PATH%;%DOCKER_PATH%
+                        
+                        echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin
+                        
+                        docker buildx build --platform linux/amd64 -t %IMAGE% --push .
+                        
                     '''
                 }
             }
