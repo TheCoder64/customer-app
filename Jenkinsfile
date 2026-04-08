@@ -31,7 +31,7 @@ pipeline {
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
-                    sh '''
+                    bat '''
                     export PATH=$PATH:$DOCKER_PATH
 
                     echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
